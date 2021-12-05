@@ -1,0 +1,5 @@
+Alimentar: 45456567687, Esparguete Pingo Doce 500g, 0.65, 210, 2120, 10;
+Alimentar: 67899876789, Laranja IGP Algarve 3 Kg, 2.97, 2000, 42000, 2;
+Limpeza: 67899876729, lixivia, 1.23, 2001, 99;
+Mobiliario: 67899876105, GLADSTAD, 249, 2030, 17, 147, 212, 95;
+Mobiliario: 12345678912, CADEIRA BRICH SCAND NORDIC, 32.95, 202, 3.75, 46.5, 84, 40; 
