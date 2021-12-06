@@ -1,2 +1,2 @@
-lucmatnetanj@gmail.com, frequente;
-afonsogouveia@gmail.com, normal;
+Lucas, Lote3, lucmatnetanj@gmail.com, 964084192, 31/10/2002, frequente;
+Afonso, Lote3, afonsogouveia@gmail.com, 020303929, 24/12/2002, normal;

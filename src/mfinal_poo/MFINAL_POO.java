@@ -7,22 +7,21 @@ public class MFINAL_POO {
 
     public static void main(String[] args) {
 
-        Data data_atual = new Data(20,12,2002);
-        File file = new File("./Ficheiros_objeto");
+        Data data_atual = new Data(20,12,2002); // defino qual a data do sistema
+
+        File file = new File("./Ficheiros_objeto"); //crio a pasta onde vão ser guardados os ficheiros objeto 
         file.mkdir();
     
-        
-        
-        listPromocoes promo = new listPromocoes();
+        listPromocoes promo = new listPromocoes(); //crio uma lista promoção, onde vou guardar a informação das promoções
         promo.get_file();
         
     
-        listProdutos list_produtos = new listProdutos();
+        listProdutos list_produtos = new listProdutos(); //crio uma lista produtos, onde vou guardar a informação dos produtos
         list_produtos.get_all_produtos();
 
-        listClientes list_clientes = new listClientes();
+        listClientes list_clientes = new listClientes(); //crio uma lista clientes, onde vou guardar a informação dos clientes
         list_clientes.get_all_clientes();
-        //list_clientes.print_all_clientes();
+        
         
 
         
@@ -55,6 +54,7 @@ public class MFINAL_POO {
                     tipo_cliente = list_clientes.cliente_existe(mail);
                 }
 
+                System.out.print("\n\n\t\t Bem vindo à sua conta "+ mail);
             
                 int opcao_cliente = 1;
                     while(opcao_cliente != 0){
@@ -177,7 +177,7 @@ public class MFINAL_POO {
 
                                 if (tipo_cliente =="frequente" && conta<40){
                                     conta+=15;
-                                    System.out.print("\n\n\tCustos de transporte : 15 euros ");
+                                    System.out.print("\n\n\tCustos de transporte : 15 euros "); 
                                 }
                                 else{
                                     System.out.print("\n\n\tCusto de transporte : 20 euros");
@@ -208,7 +208,7 @@ public class MFINAL_POO {
         }
         
         
-    
+        
     }
     
 }

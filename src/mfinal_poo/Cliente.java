@@ -25,12 +25,20 @@ class comprasList implements Serializable{
 }
 
 class Cliente implements Serializable {
+    public String nome;
+    public String morada;
     public String mail;
+    public String telefone;
+    public Data data_de_nascimento;
     public String tipo_de_cliente;
     public comprasList compras_efetuadas;
 
-    public Cliente(String mail, String tipo_de_cliente, comprasList compras_efetuadas){
+    public Cliente (String nome, String morada, String mail, String telefone, Data data_de_nascimento, String tipo_de_cliente,  comprasList compras_efetuadas){
+        this.nome = nome;
+        this.morada = morada;
         this.mail = mail;
+        this.telefone = telefone;
+        this.data_de_nascimento = data_de_nascimento;
         this.tipo_de_cliente = tipo_de_cliente;
         this.compras_efetuadas = compras_efetuadas;
     }

@@ -40,10 +40,13 @@ public class listClientes implements Serializable{
                     for (String i : clientes_info){
 
                         String[] clientes_info_splited = i.split(", ");
-                        //System.out.print(Arrays.toString(clientes_info_splited));
+                        System.out.print(Arrays.toString(clientes_info_splited));
                         comprasList newCompras_efetuadas = new comprasList();
 
-                        Cliente newCliente = new Cliente(clientes_info_splited[0], clientes_info_splited[1], newCompras_efetuadas);
+                        String[] data_ = clientes_info_splited[4].split("/");
+                        Data data_nascimento = new Data(Integer.parseInt(data_[0]),Integer.parseInt(data_[1]),Integer.parseInt(data_[2]));
+
+                        Cliente newCliente = new Cliente(clientes_info_splited[0], clientes_info_splited[1],clientes_info_splited[2],clientes_info_splited[3],data_nascimento,clientes_info_splited[5],newCompras_efetuadas);
                         lista_de_clientes.add(newCliente);
 
                     }
