@@ -55,7 +55,7 @@ public class MFINAL_POO {
                     tipo_cliente = list_clientes.cliente_existe(mail);
                 }
 
-                System.out.print("\n\n\t\t Bem vindo à sua conta "+ mail);
+                System.out.print("\n\n\t\t Bem vindo à sua conta "+ list_clientes.get_name_by_mail(mail));
             
                 int opcao_cliente = 1;
                     while(opcao_cliente != 0){

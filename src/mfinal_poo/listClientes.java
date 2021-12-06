@@ -134,4 +134,13 @@ public class listClientes implements Serializable{
         }
     }
 
+    public String get_name_by_mail(String mail){
+        for (Cliente i :lista_de_clientes){
+            if(i.getMail().equals(mail)){
+                return i.getNome();
+            }
+        }
+        return "";
+    }
+
 }

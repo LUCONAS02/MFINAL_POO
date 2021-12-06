@@ -23,6 +23,13 @@ class Cliente implements Serializable {
     public comprasList getComprasefetuadas(){
         return this.compras_efetuadas;
     }
+
+    public String getNome(){
+        return this.nome;
+    }
+    
+    
+
     public Cliente (String nome, String morada, String mail, String telefone, Data data_de_nascimento, String tipo_de_cliente,  comprasList compras_efetuadas){
         this.nome = nome;
         this.morada = morada;
