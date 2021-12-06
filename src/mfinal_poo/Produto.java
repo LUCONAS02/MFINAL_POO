@@ -6,7 +6,7 @@ abstract class Produto implements Serializable {
     private String Identificador;
     private String Nome;
     private double PrecoUnitario;
-    protected long stockExistente;  
+    private long stockExistente;  
 
     public Produto(String Identificador, String Nome, double PrecoUnitario, long stockExistente){
         this.Identificador = Identificador;
@@ -30,6 +30,14 @@ abstract class Produto implements Serializable {
         return this.PrecoUnitario;
     }
 
+    public long getStockExistente(){
+        return this.stockExistente;
+    }
+
+    public void subtrair_stock_existente(int numero_compra){
+        this.stockExistente-=numero_compra;
+    }
+    
     public abstract String print_comprado();
     
 }

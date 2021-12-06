@@ -116,7 +116,7 @@ class listProdutos implements Serializable {
         for(Produto i: list_produtos){
             if(i.getIdentificador().equals(produtos.getIdentificador())){
                 
-                i.stockExistente-=numero_compra;
+                i.subtrair_stock_existente(numero_compra);
     
             }
         }

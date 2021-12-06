@@ -92,8 +92,8 @@ public class MFINAL_POO {
                         System.out.print("Qual a quantidade de "+produto_selecionado.getNome()+" é que quer comprar?? (Se já não quiser comprar escreva 0):");
                         int quan_produto = sc_quan_produto.nextInt();
                         
-                        while(quan_produto>produto_selecionado.stockExistente || quan_produto<0){
-                            System.out.print("O stock existente é "+produto_selecionado.stockExistente+" e portanto insuficiente para o seu pedido.");
+                        while(quan_produto>produto_selecionado.getStockExistente() || quan_produto<0){
+                            System.out.print("O stock existente é "+produto_selecionado.getStockExistente()+" e portanto insuficiente para o seu pedido.");
                             System.out.print("\nQual a quantidade de "+produto_selecionado.getNome()+" é que quer comprar?? (Se já não quiser comprar escreva 0):");
                             quan_produto = sc_quan_produto.nextInt();
                         }
@@ -141,8 +141,8 @@ public class MFINAL_POO {
                             System.out.print("Qual a quantidade de "+produto_selecionado.getNome()+" é que quer comprar?? (Se já não quiser comprar escreva 0):");
                             quan_produto = sc_quan_produto.nextInt();
         
-                            while(quan_produto>produto_selecionado.stockExistente || quan_produto<0){
-                                System.out.print("O stock existente é "+produto_selecionado.stockExistente+" e portanto insuficiente para o seu pedido.");
+                            while(quan_produto>produto_selecionado.getStockExistente() || quan_produto<0){
+                                System.out.print("O stock existente é "+produto_selecionado.getStockExistente()+" e portanto insuficiente para o seu pedido.");
                                 System.out.print("\nQual a quantidade de "+produto_selecionado.getNome()+" é que quer comprar?? (Se já não quiser comprar escreva 0):");
                                 quan_produto = sc_quan_produto.nextInt();
                             }
@@ -176,7 +176,6 @@ public class MFINAL_POO {
                                 System.out.print("Conta Final: ");
                                 double conta = cesto_de_compras.calcular_conta(promo, data_atual);
 
-                                System.out.print(tipo_cliente);
                                 if (tipo_cliente.equals("frequente") && conta<40){
                                     conta+=15;
                                     System.out.print("\n\n\tCustos de transporte : 15 euros "); 
