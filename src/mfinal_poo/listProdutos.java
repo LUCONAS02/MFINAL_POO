@@ -114,7 +114,7 @@ class listProdutos implements Serializable {
 
     public void retirar_stock(Produto produtos,int numero_compra){
         for(Produto i: list_produtos){
-            if(i.Identificador.equals(produtos.Identificador)){
+            if(i.getIdentificador().equals(produtos.getIdentificador())){
                 
                 i.stockExistente-=numero_compra;
     

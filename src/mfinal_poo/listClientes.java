@@ -40,7 +40,7 @@ public class listClientes implements Serializable{
                     for (String i : clientes_info){
 
                         String[] clientes_info_splited = i.split(", ");
-                        System.out.print(Arrays.toString(clientes_info_splited));
+                        
                         comprasList newCompras_efetuadas = new comprasList();
 
                         String[] data_ = clientes_info_splited[4].split("/");
@@ -90,7 +90,7 @@ public class listClientes implements Serializable{
 
     public void print_all_clientes(String mail){
         for (Cliente i : lista_de_clientes){
-            if(i.mail.equals(mail)){
+            if(i.getMail().equals(mail)){
                 i.print_cliente();
             }
             
@@ -99,16 +99,16 @@ public class listClientes implements Serializable{
 
     public String cliente_existe(String mail){
         for (Cliente i :lista_de_clientes){
-            if(i.mail.equals(mail)){
-                return i.tipo_de_cliente;
+            if(i.getMail().equals(mail)){
+                return i.getTipo_de_cliente();
             }
         }
         return "";
     }
     public void add_compras(String mail,Cesto cesto){
         for(Cliente i :lista_de_clientes){
-            if(i.mail.equals(mail)){
-                i.compras_efetuadas.add(cesto);
+            if(i.getMail().equals(mail)){
+                i.getComprasefetuadas().add(cesto);
             }
         }
         File f__ = new File("./Ficheiros_objeto\\Clientes.obj");

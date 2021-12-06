@@ -3,9 +3,9 @@ package mfinal_poo;
 import java.io.Serializable;
 
 abstract class Produto implements Serializable {
-    protected String Identificador;
-    protected String Nome;
-    protected double PrecoUnitario;
+    private String Identificador;
+    private String Nome;
+    private double PrecoUnitario;
     protected long stockExistente;  
 
     public Produto(String Identificador, String Nome, double PrecoUnitario, long stockExistente){
@@ -18,6 +18,16 @@ abstract class Produto implements Serializable {
     
     public String toString(){
         return "Nome do Produto: "+this.Nome+", Preço: "+this.PrecoUnitario+", Stock Existente: "+this.stockExistente;
+    }
+    
+    public String getIdentificador(){
+        return this.Identificador;
+    }
+    public String getNome(){
+        return this.Nome;
+    }
+    public double getPrecoUnitario(){
+        return this.PrecoUnitario;
     }
 
     public abstract String print_comprado();
@@ -35,16 +45,17 @@ class Alimentares extends Produto{
 
     public double calcular_valor(listPromocoes list_promocoes,Data data_atual, int quantidade){
         double valor = 0;
-        if((list_promocoes.promocao_existe(this.Identificador, data_atual)).equals("leve4pague3")){
+
+        if((list_promocoes.promocao_existe(this.getIdentificador(), data_atual)).equals("leve4pague3")){
             int promo = quantidade/4;
             int normal = quantidade%4;
 
-            valor = promo*3*this.PrecoUnitario + normal*this.PrecoUnitario;
-            System.out.print("\n\t"+this.Nome +" ----- "+quantidade+" * "+this.PrecoUnitario+" ----- "+"(leve 4 pague 3) - "+(promo*PrecoUnitario)+" ----- "+valor);
+            valor = promo*3*this.getPrecoUnitario() + normal*this.getPrecoUnitario();
+            System.out.print("\n\t"+this.getNome() +" ----- "+quantidade+" * "+this.getPrecoUnitario()+" ----- "+"(leve 4 pague 3) - "+(promo*getPrecoUnitario())+" ----- "+valor);
             
         }
 
-        else if((list_promocoes.promocao_existe(this.Identificador, data_atual)).equals("paguemenos")){
+        else if((list_promocoes.promocao_existe(this.getIdentificador(), data_atual)).equals("paguemenos")){
             double desconto = 1.0;
             /*
             for(int i = 0;i<quantidade;i++){
@@ -54,17 +65,17 @@ class Alimentares extends Produto{
 
         }
 
-        else if ((list_promocoes.promocao_existe(this.Identificador, data_atual)).equals("")){
+        else if ((list_promocoes.promocao_existe(this.getIdentificador(), data_atual)).equals("")){
 
-            valor = quantidade*this.PrecoUnitario;
-            System.out.print("\n\t"+this.Nome +" ----- "+quantidade+" * "+this.PrecoUnitario+" ----- "+"  ----- "+valor);
+            valor = quantidade*this.getPrecoUnitario();
+            System.out.print("\n\t"+this.getNome() +" ----- "+quantidade+" * "+this.getPrecoUnitario()+" ----- "+"  ----- "+valor);
         }
 
         return valor;
     }
 
     public String print_comprado(){
-        return "Nome do Produto: "+this.Nome+", Identificador :"+this.Identificador+", Preço: "+this.PrecoUnitario+", Calorias: "+this.calorias+", Percentagem de Gordura: "+this.percGordura+"\n";
+        return "Nome do Produto: "+this.getNome()+", Identificador :"+this.getIdentificador()+", Preço: "+this.getPrecoUnitario()+", Calorias: "+this.calorias+", Percentagem de Gordura: "+this.percGordura+"\n";
     }
 
     @Override
@@ -84,16 +95,16 @@ class Limpeza extends Produto{
 
     public double calcular_valor(listPromocoes list_promocoes,Data data_atual, int quantidade){
         double valor = 0;
-        if((list_promocoes.promocao_existe(this.Identificador, data_atual)).equals("leve4pague3")){
+        if((list_promocoes.promocao_existe(this.getIdentificador(), data_atual)).equals("leve4pague3")){
             int promo = quantidade/4;
             int normal = quantidade%4;
 
-            valor = promo*3*this.PrecoUnitario + normal*this.PrecoUnitario;
-            System.out.print("\n\t"+this.Nome +" ----- "+quantidade+" * "+this.PrecoUnitario+" ----- "+"(leve 4 pague 3) - "+(promo*PrecoUnitario)+" ----- "+valor);
+            valor = promo*3*this.getPrecoUnitario() + normal*this.getPrecoUnitario();
+            System.out.print("\n\t"+this.getNome() +" ----- "+quantidade+" * "+this.getPrecoUnitario()+" ----- "+"(leve 4 pague 3) - "+(promo*getPrecoUnitario())+" ----- "+valor);
             
         }
 
-        else if((list_promocoes.promocao_existe(this.Identificador, data_atual)).equals("paguemenos")){
+        else if((list_promocoes.promocao_existe(this.getIdentificador(), data_atual)).equals("paguemenos")){
             double desconto = 1.0;
             /*
             for(int i = 0;i<quantidade;i++){
@@ -103,16 +114,16 @@ class Limpeza extends Produto{
 
         }
 
-        else if ((list_promocoes.promocao_existe(this.Identificador, data_atual)).equals("")){
-            valor = quantidade*this.PrecoUnitario;
-            System.out.print("\n\t"+this.Nome +" ----- "+quantidade+" * "+this.PrecoUnitario+" ----- "+"  ----- "+valor);
+        else if ((list_promocoes.promocao_existe(this.getIdentificador(), data_atual)).equals("")){
+            valor = quantidade*this.getPrecoUnitario();
+            System.out.print("\n\t"+this.getNome() +" ----- "+quantidade+" * "+this.getPrecoUnitario()+" ----- "+"  ----- "+valor);
         }
 
         return valor;
     }
     
     public String print_comprado(){
-        return "Nome do Produto: "+this.Nome+", Identificador :"+this.Identificador+", Preço: "+this.PrecoUnitario+", Grau de Toxicidade: "+this.grauToxicidade+"\n";
+        return "Nome do Produto: "+this.getNome()+", Identificador :"+this.getIdentificador()+", Preço: "+this.getPrecoUnitario()+", Grau de Toxicidade: "+this.grauToxicidade+"\n";
     }
 
     @Override
@@ -137,22 +148,22 @@ class Mobiliario extends Produto{
     
     public double calcular_valor(listPromocoes list_promocoes,Data data_atual, int quantidade){
         double valor = 0;
-        if((list_promocoes.promocao_existe(this.Identificador, data_atual)).equals("leve4pague3")){
+        if((list_promocoes.promocao_existe(this.getIdentificador(), data_atual)).equals("leve4pague3")){
             int promo = quantidade/4;
             int normal = quantidade%4;
 
-            valor = promo*3*this.PrecoUnitario + normal*this.PrecoUnitario;
+            valor = promo*3*this.getPrecoUnitario() + normal*this.getPrecoUnitario();
             if (this.peso>15){
                 valor+=10;
-                System.out.print("\n\t"+this.Nome +" ----- "+quantidade+" * "+this.PrecoUnitario+" ----- "+"(leve 4 pague 3) - "+(promo*PrecoUnitario)+" ----- "+(valor-10)+" + 10 euros = "+valor);
+                System.out.print("\n\t"+this.getNome() +" ----- "+quantidade+" * "+this.getPrecoUnitario()+" ----- "+"(leve 4 pague 3) - "+(promo*getPrecoUnitario())+" ----- "+(valor-10)+" + 10 euros = "+valor);
             }
             else{
-                System.out.print("\n\t"+this.Nome +" ----- "+quantidade+" * "+this.PrecoUnitario+" ----- "+"(leve 4 pague 3) - "+(promo*PrecoUnitario)+" ----- "+valor);
+                System.out.print("\n\t"+this.getNome() +" ----- "+quantidade+" * "+this.getPrecoUnitario()+" ----- "+"(leve 4 pague 3) - "+(promo*getPrecoUnitario())+" ----- "+valor);
             }
             
         }
 
-        else if((list_promocoes.promocao_existe(this.Identificador, data_atual)).equals("paguemenos")){
+        else if((list_promocoes.promocao_existe(this.getIdentificador(), data_atual)).equals("paguemenos")){
             double desconto = 1.0;
             /*
             for(int i = 0;i<quantidade;i++){
@@ -161,22 +172,22 @@ class Mobiliario extends Produto{
             */
             if (this.peso>15){
                 valor+=10;
-                System.out.print("\n\t"+this.Nome +" ----- "+quantidade+" * "+this.PrecoUnitario+" ----- "+(valor-10)+" + 10 euros = "+valor);
+                System.out.print("\n\t"+this.getNome() +" ----- "+quantidade+" * "+this.getPrecoUnitario()+" ----- "+(valor-10)+" + 10 euros = "+valor);
             }
             else{
-                System.out.print("\n\t"+this.Nome +" ----- "+quantidade+" * "+this.PrecoUnitario+" ----- "+valor);
+                System.out.print("\n\t"+this.getNome() +" ----- "+quantidade+" * "+this.getPrecoUnitario()+" ----- "+valor);
             }
 
         }
 
-        else if ((list_promocoes.promocao_existe(this.Identificador, data_atual)).equals("")){
-            valor = quantidade*this.PrecoUnitario;
+        else if ((list_promocoes.promocao_existe(this.getIdentificador(), data_atual)).equals("")){
+            valor = quantidade*this.getPrecoUnitario();
             if (this.peso>15){
                 valor+=10;
-                System.out.print("\n\t"+this.Nome +" ----- "+quantidade+" * "+this.PrecoUnitario+" ----- "+"  ----- "+(valor-10)+" + 10 euros = "+valor);
+                System.out.print("\n\t"+this.getNome() +" ----- "+quantidade+" * "+this.getPrecoUnitario()+" ----- "+"  ----- "+(valor-10)+" + 10 euros = "+valor);
             }
             else{
-                System.out.print("\n\t"+this.Nome +" ----- "+quantidade+" * "+this.PrecoUnitario+" ----- "+"  ----- "+valor);
+                System.out.print("\n\t"+this.getNome() +" ----- "+quantidade+" * "+this.getPrecoUnitario()+" ----- "+"  ----- "+valor);
             }
             
         }
@@ -185,7 +196,7 @@ class Mobiliario extends Produto{
     }
 
     public String print_comprado(){
-        return "Nome do Produto: "+this.Nome+", Identificador :"+this.Identificador+", Preço: "+this.PrecoUnitario+", Peso: "+this.peso+", Largura: "+this.largura+", Comprimento: "+this.comprimento+", Profundidade: "+this.profundidade+"\n";
+        return "Nome do Produto: "+this.getNome()+", Identificador :"+this.getIdentificador()+", Preço: "+this.getPrecoUnitario()+", Peso: "+this.peso+", Largura: "+this.largura+", Comprimento: "+this.comprimento+", Profundidade: "+this.profundidade+"\n";
     }
 
     @Override

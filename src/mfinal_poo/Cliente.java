@@ -1,38 +1,28 @@
 package mfinal_poo;
 
 import java.io.*;
-import java.util.*;
-
-class comprasList implements Serializable{
-    private ArrayList<Cesto> lista_de_compras;
-
-    public comprasList(){
-        lista_de_compras = new ArrayList<Cesto>();
-    }
-
-    public void print_compras(){
-        int count = 0;
-        for (Cesto i : lista_de_compras){
-            count+=1;
-            System.out.print("\n"+count+")"+"\n");
-            i.print_all();
-        }
-    }
-    public void add(Cesto cesto){
-        lista_de_compras.add(cesto);
-    }
-    
-}
 
 class Cliente implements Serializable {
-    public String nome;
-    public String morada;
-    public String mail;
-    public String telefone;
-    public Data data_de_nascimento;
-    public String tipo_de_cliente;
-    public comprasList compras_efetuadas;
+    private String nome;
+    private String morada;
+    private String mail;
+    private String telefone;
+    private Data data_de_nascimento;
+    private String tipo_de_cliente;
+    private comprasList compras_efetuadas;
 
+
+    public String getMail(){
+        return this.mail;
+    }
+
+    public String getTipo_de_cliente(){
+        return this.tipo_de_cliente;
+    }
+
+    public comprasList getComprasefetuadas(){
+        return this.compras_efetuadas;
+    }
     public Cliente (String nome, String morada, String mail, String telefone, Data data_de_nascimento, String tipo_de_cliente,  comprasList compras_efetuadas){
         this.nome = nome;
         this.morada = morada;
