@@ -17,7 +17,12 @@ public class listClientes implements Serializable{
             
             FileInputStream fis = new FileInputStream(f);
             ObjectInputStream ois= new ObjectInputStream(fis);
-            lista_de_clientes = (ArrayList<Cliente>)ois.readObject();
+            try{
+                lista_de_clientes = (ArrayList<Cliente>)ois.readObject();
+            }
+            catch(ClassCastException ex__){
+                System.out.print("Erro a fazer o cast para ArrayList<Produto>");
+            }
             ois.close();
         } 
         catch(FileNotFoundException ex) {

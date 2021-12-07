@@ -65,11 +65,15 @@ class Alimentares extends Produto{
 
         else if((list_promocoes.promocao_existe(this.getIdentificador(), data_atual)).equals("paguemenos")){
             double desconto = 1.0;
-            /*
-            for(int i = 0;i<quantidade;i++){
-                if(desconto)
+            
+            for(int i = 0;i<=quantidade;i++){
+                if(desconto > 0.5){
+                    desconto-=0.05;
+                }
+                valor += desconto*this.getPrecoUnitario();
             }
-            */
+            
+            System.out.print("\n\t"+this.getNome() +" ----- "+quantidade+" * "+this.getPrecoUnitario()+" ----- "+"(pague - menos) "+(valor-(quantidade*this.getPrecoUnitario()))+" ----- "+valor);
 
         }
 
@@ -114,11 +118,15 @@ class Limpeza extends Produto{
 
         else if((list_promocoes.promocao_existe(this.getIdentificador(), data_atual)).equals("paguemenos")){
             double desconto = 1.0;
-            /*
-            for(int i = 0;i<quantidade;i++){
-                if(desconto)
+            
+            for(int i = 0;i<=quantidade;i++){
+                if(desconto > 0.5){
+                    desconto-=0.05;
+                }
+                valor += desconto*this.getPrecoUnitario();
             }
-            */
+            
+            System.out.print("\n\t"+this.getNome() +" ----- "+quantidade+" * "+this.getPrecoUnitario()+" ----- "+"(pague - menos) "+(valor-(quantidade*this.getPrecoUnitario()))+" ----- "+valor);
 
         }
 
@@ -173,17 +181,22 @@ class Mobiliario extends Produto{
 
         else if((list_promocoes.promocao_existe(this.getIdentificador(), data_atual)).equals("paguemenos")){
             double desconto = 1.0;
-            /*
-            for(int i = 0;i<quantidade;i++){
-                if(desconto)
+            
+            for(int i = 0;i<=quantidade;i++){
+                if(desconto > 0.5){
+                    desconto-=0.05;
+                }
+                valor += desconto*this.getPrecoUnitario();
             }
-            */
+            
+            
             if (this.peso>15){
+                
+                System.out.print("\n\t"+this.getNome() +" ----- "+quantidade+" * "+this.getPrecoUnitario()+" ----- "+"(pague - menos) "+(valor-(quantidade*this.getPrecoUnitario()))+" ----- "+(valor)+" + 10 euros = "+(valor+10));
                 valor+=10;
-                System.out.print("\n\t"+this.getNome() +" ----- "+quantidade+" * "+this.getPrecoUnitario()+" ----- "+(valor-10)+" + 10 euros = "+valor);
             }
             else{
-                System.out.print("\n\t"+this.getNome() +" ----- "+quantidade+" * "+this.getPrecoUnitario()+" ----- "+valor);
+                System.out.print("\n\t"+this.getNome() +" ----- "+quantidade+" * "+this.getPrecoUnitario()+" ----- "+"(pague - menos) "+(valor-(quantidade*this.getPrecoUnitario()))+" ----- "+valor);
             }
 
         }

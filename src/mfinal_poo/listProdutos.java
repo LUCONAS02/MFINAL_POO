@@ -16,7 +16,12 @@ class listProdutos implements Serializable {
             
             FileInputStream fis = new FileInputStream(f);
             ObjectInputStream ois= new ObjectInputStream(fis);
-            list_produtos = (ArrayList<Produto>)ois.readObject();
+            try{
+                list_produtos = (ArrayList<Produto>)ois.readObject();
+            }
+            catch(ClassCastException ex__){
+                System.out.print("Erro a fazer o cast para ArrayList<Produto>");
+            }
             ois.close();
         } 
         catch(FileNotFoundException ex) {
