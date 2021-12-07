@@ -2,6 +2,9 @@ package mfinal_poo;
 
 import java.io.Serializable;
 
+/**
+ * class promocoes
+ */
 public class Promocoes implements Serializable{
     protected String identificador;
     protected String modalidade;

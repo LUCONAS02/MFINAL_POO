@@ -3,11 +3,14 @@ package mfinal_poo;
 import java.io.*;
 import java.util.*;
 
+
 public class MFINAL_POO {
 
     public static void main(String[] args) {
-
-        Data data_atual = new Data(20,12,2002); // defino qual a data do sistema
+        /**
+         *
+         */
+        Data data_atual = new Data(20,12,2002); //defino qual a data do sistema
 
         File file = new File("./Ficheiros_objeto"); //crio a pasta onde vão ser guardados os ficheiros objeto 
         file.mkdir();
@@ -28,7 +31,7 @@ public class MFINAL_POO {
         int opcao_1 =1;
 
         while(opcao_1!=0){
-            System.out.print("\n----------MENU----------\n");
+            System.out.print("\n----------MENU----------\n"); //
             System.out.print("      1 - Login        \n");
             System.out.print("      0 - Sair        \n\n");
 
