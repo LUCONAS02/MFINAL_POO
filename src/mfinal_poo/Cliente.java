@@ -90,6 +90,12 @@ class Cliente implements Serializable {
      */
     public void print_cliente(){
         System.out.print("\nE-mail : "+this.mail+"\nTipo de cliente : "+this.tipo_de_cliente);
-        compras_efetuadas.print_compras();
+        if (compras_efetuadas.size()!=0){
+            compras_efetuadas.print_compras();
+        }
+        else{
+            System.out.print("\n\n\t\tAinda não fez nenhuma compra!!");
+        }
+        
     }
 }

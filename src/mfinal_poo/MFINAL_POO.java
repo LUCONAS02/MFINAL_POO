@@ -12,9 +12,11 @@ public class MFINAL_POO {
      * @author Lucas Anjo, Afonso Melo
      */
     /**
-     * Onde e corrido o menu, isto e, onde e processada toda a informacao que e pedida ao utilizador, e onde sao chamads todas
+     * Onde e corrido o menu, isto e, onde e processada toda a informacao que e pedida ao utilizador, e onde sao chamadas todas
      * as funcoes e inicializadas todas as variaveis
      * @param args neste caso esta list esta vazia
+     * @throws InputMismatchException Este erro acontece porque o utilizador pode se ter enganado e por uma letra em vez de um numero inteiro inteiro
+     * e ao chegar a scanner.nexInt() este erro vai ser enviado.
      */
     public static void main(String[] args) {
         /**

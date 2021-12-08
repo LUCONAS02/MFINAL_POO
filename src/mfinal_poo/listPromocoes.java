@@ -48,12 +48,7 @@ public class listPromocoes {
             
             FileInputStream fis = new FileInputStream(f);
             ObjectInputStream ois= new ObjectInputStream(fis);
-            try{
-                list_promo = (ArrayList<Promocoes>)ois.readObject();
-            }
-            catch(ClassCastException ex__){
-                System.out.print("Erro a fazer o cast para ArrayList<Produto>");
-            }
+            list_promo = (ArrayList<Promocoes>)ois.readObject();
             ois.close();
         } 
         catch(FileNotFoundException ex) {
@@ -122,6 +117,7 @@ public class listPromocoes {
         catch(ClassNotFoundException ex) {
             System.out.println("Erro a converter objeto.");
         }
+
     }
 
     /**

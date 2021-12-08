@@ -36,4 +36,11 @@ class comprasList  implements Serializable{
     public void add(Cesto cesto){
         lista_de_compras.add(cesto);
     }
+    /**
+     * Serve para saber qual o tamanho de um objeto comprasList
+     * @return o tamanho da lista
+     */
+    public int size(){
+        return lista_de_compras.size();
+    }
 }

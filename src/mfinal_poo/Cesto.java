@@ -3,7 +3,7 @@ import java.io.Serializable;
 import java.util.*;
 
 /**
- * esta classe serve para gerir os objetos do tipo CestoItem
+ * Esta classe serve para gerir os objetos do tipo CestoItem
  */
 class CestoItem implements Serializable{
     /**

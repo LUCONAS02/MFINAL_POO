@@ -108,12 +108,14 @@ public class listClientes implements Serializable{
      * @param mail mail do cliente {@link String}
      */
     public void print_all_clientes(String mail){
+
         for (Cliente i : lista_de_clientes){
             if(i.getMail().equals(mail)){
                 i.print_cliente();
             }
-            
         }
+              
+    
     }
 
     /**
