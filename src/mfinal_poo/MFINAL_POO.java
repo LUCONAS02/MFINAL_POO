@@ -3,9 +3,19 @@ package mfinal_poo;
 import java.io.*;
 import java.util.*;
 
-
+/**
+ * Onde esta o main
+ */
 public class MFINAL_POO {
-
+    /**
+     *
+     * @author Lucas Anjo, Afonso Melo
+     */
+    /**
+     * Onde e corrido o menu, isto e, onde e processada toda a informacao que e pedida ao utilizador, e onde sao chamads todas
+     * as funcoes e inicializadas todas as variaveis
+     * @param args neste caso esta list esta vazia
+     */
     public static void main(String[] args) {
         /**
          *

@@ -2,15 +2,25 @@ package mfinal_poo;
 
 import java.io.*;
 import java.util.*;
-
+/**
+ * Para fazer a gestao de lista de clientes
+ */
 public class listClientes implements Serializable{
-
+    /**
+     * lista de {@link Cliente}
+     */
     private ArrayList<Cliente> lista_de_clientes;
-
+    /**
+     * Serve para criar uma nova ArrayList
+     */
     public listClientes(){
         this.lista_de_clientes = new ArrayList<Cliente>();
     }
-
+    /**
+     * Esta funcao tenta ler o ficheiro objeto (Clientes.obj) onde esta guardada a lista de clientes.
+     * Se conseguir define a lista de clientes igual a lida.
+     * Se esse nao existir entao vai ler do ficheiro txt (Clientes.txt) passar os valores lidos para a lista de clientes e escrever no ficheiro objeto (Clientes.obj).
+     */
     public void  get_all_clientes(){
         File f = new File("./Ficheiros_objeto\\Clientes.obj");
         try{
@@ -93,6 +103,10 @@ public class listClientes implements Serializable{
         }
     }
 
+    /**
+     * Esta funcao da print a informacoes do {@link Cliente} que tem como mail o parametro passado
+     * @param mail mail do cliente {@link String}
+     */
     public void print_all_clientes(String mail){
         for (Cliente i : lista_de_clientes){
             if(i.getMail().equals(mail)){
@@ -102,6 +116,11 @@ public class listClientes implements Serializable{
         }
     }
 
+    /**
+     * Esta funcao serve para saber se um cliente esta ou nao na lista de clientes
+     * @param mail o mail do cliente
+     * @return o tipo de cliente, caso else exista e "" caso ele nao exista
+     */
     public String cliente_existe(String mail){
         for (Cliente i :lista_de_clientes){
             if(i.getMail().equals(mail)){
@@ -110,6 +129,12 @@ public class listClientes implements Serializable{
         }
         return "";
     }
+
+    /**
+     * Adicionar o {@link Cesto} de um {@link Cliente} a sua {@link comprasList}, atualizar a lsita de clientes e voltar a escrever no ficheiro objeto.
+     * @param mail o mail do cliente a que se vai adicionar o cesto {@link String}
+     * @param cesto o cesto a ser adicionado {@link Cesto}
+     */
     public void add_compras(String mail,Cesto cesto){
         for(Cliente i :lista_de_clientes){
             if(i.getMail().equals(mail)){
@@ -133,12 +158,20 @@ public class listClientes implements Serializable{
 
     }
 
+    /**
+     * Esta funcao apenas serve para teste e da print a todos os {@link Cliente}
+     */
     public void print_all_compras(){
         for(Cliente i:lista_de_clientes){
             i.print_cliente();
         }
     }
 
+    /**
+     * Esta funcao serve para obter o nome de um cliente sabendo o seu mail
+     * @param mail o mail do cliente que se deseja saber o nome
+     * @return o nome do clinete ou "",caso ele nao exista
+     */
     public String get_name_by_mail(String mail){
         for (Cliente i :lista_de_clientes){
             if(i.getMail().equals(mail)){

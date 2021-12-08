@@ -2,23 +2,45 @@ package mfinal_poo;
 
 import java.util.*;
 import java.io.*;
-public class listPromocoes {
 
+/**
+ * Para fazer a gestao de lista de promocoes
+ */
+public class listPromocoes {
+    /**
+     * lista de {@link Promocoes}
+     */
     private ArrayList<Promocoes> list_promo;
 
+    /**
+     * Serve para criar uma nova ArrayList
+     */
     public listPromocoes(){
-        this.list_promo = new ArrayList<>();
+        this.list_promo = new ArrayList<Promocoes>();
     }
 
+    /**
+     * Adicionar uma promocao a lista de promocoes
+     * @param promocao promocao a ser adicionada {@link Promocoes}
+     */
     public void add(Promocoes promocao){
         list_promo.add(promocao);
     }
-    
+
+    /**
+     * Escreve todas as promocoes existentes, esta funcao nunca e utilizada apenas para teste
+     */
     public void print_all(){
         for(Promocoes i : list_promo){
             System.out.print(i);
         }
     }
+
+    /**
+     * Esta funcao tenta ler o ficheiro objeto (promocoes.obj) onde esta guardada a lista de promocoes.
+     * Se conseguir define a lista de promocoes igual a lida.
+     * Se esse nao existir entao vai ler do ficheiro txt (Promocoes.txt) passar os valores lidos para a lista de promocoes e escrever no ficheiro objeto (promocoes.obj).
+     */
     public void get_file(){
 
         File f = new File("./Ficheiros_objeto\\promocoes.obj");
@@ -102,11 +124,18 @@ public class listPromocoes {
         }
     }
 
+    /**
+     * Esta funcao serve para indicar se um produto tem ou nao promocao e se tem qual o tipo
+     * @param identificador o identificador do produto
+     * @param data_atual data atual do sistema
+     * @return uma {@link String} que sera ou leve4pague3 ou paguemenos ou "",este ultimo significa que nada foi encontrado
+     */
     public String promocao_existe(String identificador,Data data_atual){
         String existe_promo="";
         for (Promocoes i: list_promo){
-            if((i.identificador.equals(identificador)) && (i.fim.cmp_max(data_atual) && i.inicio.cmp_min(data_atual))){
-                existe_promo = i.modalidade;
+            if((i.getidentificador().equals(identificador)) && (i.getFim().cmp_max(data_atual) && i.getInicio().cmp_min(data_atual))){
+                existe_promo = i.getmodalidade();
+                break;
             }
         }
         return existe_promo;

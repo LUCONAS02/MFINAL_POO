@@ -2,14 +2,25 @@ package mfinal_poo;
 
 import java.util.*;
 import java.io.*;
-
+/**
+ * Para fazer a gestao de lista de promocoes
+ */
 class listProdutos implements Serializable {
+    /**
+     * lista de {@link Produto}
+     */
     private ArrayList<Produto> list_produtos;
-
+    /**
+     * Serve para criar uma nova ArrayList
+     */
     public listProdutos(){
         list_produtos = new ArrayList<Produto>();
     }
-
+    /**
+     * Esta funcao tenta ler o ficheiro objeto (Produtos.obj) onde esta guardada a lista de produtos.
+     * Se conseguir define a lista de produtos igual a lida.
+     * Se esse nao existir entao vai ler do ficheiro txt (Produtos.txt) passar os valores lidos para a lista de produtos e escrever no ficheiro objeto (Produtos.obj).
+     */
     public void  get_all_produtos(){
         File f = new File("./Ficheiros_objeto\\Produtos.obj");
         try{
@@ -99,24 +110,45 @@ class listProdutos implements Serializable {
         }
     }
 
+    /**
+     * Adicionar uma promocao a lista de promocoes
+     * @param produto produto a ser adicionada {@link Produto}
+     */
     public void add(Produto produto){
         list_produtos.add(produto);
     }
 
+    /**
+     * Esta funcao serve para dar print a todos os produtos existentes na lista de produtos
+     */
     public void print_all(){
         for (int j=0;j<list_produtos.size();j++){
             System.out.print(j+1+" - "+list_produtos.get(j));
         }
     }
 
+    /**
+     * Serve para saber o tamanho de uma lista de produtos
+     * @return o tamanho da lista de produtos {@link Integer}
+     */
     public int size(){
         return list_produtos.size();
     }
 
+    /**
+     *
+     * @param index O index do produto que se quer {@link Integer}
+     * @return um produto {@link Produto}
+     */
     public Produto get(int index){
         return list_produtos.get(index);
     }
 
+    /**
+     * Retira ao stock de um produto a quantidade comprada
+     * @param produtos o produto ao qual queremos tirar stock {@link Produto}
+     * @param numero_compra a quantidade comprada desse produto {@link Integer}
+     */
     public void retirar_stock(Produto produtos,int numero_compra){
         for(Produto i: list_produtos){
             if(i.getIdentificador().equals(produtos.getIdentificador())){
