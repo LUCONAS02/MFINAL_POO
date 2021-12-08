@@ -242,6 +242,7 @@ public class MFINAL_POO {
                                         System.out.print("\n\n\tCustos de transporte : 15 euros "); 
                                     }
                                     if(tipo_cliente.equals("normal")){
+                                        conta+=20;
                                         System.out.print("\n\n\tCusto de transporte : 20 euros");
                                     }
                                     
@@ -263,7 +264,7 @@ public class MFINAL_POO {
 
             }
 
-            if (opcao_1 !=0 && opcao_1 !=1 ){
+            if ((opcao_1 !=0 && opcao_1 !=1)&& !erro ){
                 System.out.print("Não existe a opção "+opcao_1+".\n\n");
             }
             
