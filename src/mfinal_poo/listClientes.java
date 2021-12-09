@@ -31,7 +31,7 @@ public class listClientes implements Serializable{
                 lista_de_clientes = (ArrayList<Cliente>)ois.readObject();
             }
             catch(ClassCastException ex__){
-                System.out.print("Erro a fazer o cast para ArrayList<Produto>");
+                System.out.print("Erro a fazer o cast para ArrayList<Cliente>");
             }
             ois.close();
         } 
@@ -49,12 +49,12 @@ public class listClientes implements Serializable{
                     br.close();
 
                     
-                    String[] clientes_info = final_.split(";");
+                    String[] clientes_info = final_.split("!");
                     
                     
                     for (String i : clientes_info){
 
-                        String[] clientes_info_splited = i.split(", ");
+                        String[] clientes_info_splited = i.split("; ");
                         
                         comprasList newCompras_efetuadas = new comprasList();
 

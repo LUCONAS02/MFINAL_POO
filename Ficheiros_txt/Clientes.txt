@@ -1,2 +1,5 @@
-Lucas, Lote3, lucmatnetanj@gmail.com, 964084192, 31/10/2002, frequente;
-Afonso, Lote3, afonsogouveia@gmail.com, 020303929, 24/12/2002, normal;
+Lucas Anjo; Lote3; lucmatnetanj@gmail.com; 964084192; 31/10/2002; frequente!
+Afonso Melo; Lote3; afonsogouveia@gmail.com; 920303929; 24/12/2002; normal!
+Anibal Cortez; Urbanizacao Quinta da oliveira direita Lote 10, 2Esq; anibalcortes@gmail.com; 935857575; 20/10/1990; normal!  
+Professor; Departamento de Engenharia Informática; professor@gmail.com; 938485768; 20/10/2000; frequente!
+Alzira Dias; Porto; alziradias@gmail.com; 945859595; 20/10/1956; normal!
