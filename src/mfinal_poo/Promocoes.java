@@ -3,7 +3,7 @@ package mfinal_poo;
 import java.io.Serializable;
 
 /**
- * Class promocoes usada para gerir informacoess sobre as promocoes
+ * Class promocoes usada para gerir informacoess sobre as promocoes está associada ao identificador de um {@link Produto}
  */
 public class Promocoes implements Serializable{
     /**
