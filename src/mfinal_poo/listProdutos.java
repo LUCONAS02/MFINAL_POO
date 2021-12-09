@@ -108,6 +108,7 @@ class listProdutos implements Serializable {
         catch(ClassNotFoundException ex) {
             System.out.println("Erro a converter objeto.");
         }
+        
     }
 
     /**
