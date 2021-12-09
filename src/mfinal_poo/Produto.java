@@ -149,11 +149,11 @@ class Alimentares extends Produto{
 
         else if((list_promocoes.promocao_existe(this.Identificador, data_atual)).equals("paguemenos")){
             double desconto = 1.0;
-            
-            for(int i = 0;i<=quantidade;i++){
+            valor=0;
+            for(int i = 0;i<quantidade;i++){
 
                 valor += desconto*this.PrecoUnitario;
-
+                
                 if(desconto > 0.5){
                     desconto-=0.05;
                 }
@@ -234,7 +234,7 @@ class Limpeza extends Produto{
         else if((list_promocoes.promocao_existe(this.Identificador, data_atual)).equals("paguemenos")){
             double desconto = 1.0;
             
-            for(int i = 0;i<=quantidade;i++){
+            for(int i = 0;i<quantidade;i++){
 
                 valor += desconto*this.PrecoUnitario;
 
@@ -341,7 +341,7 @@ class Mobiliario extends Produto{
         else if((list_promocoes.promocao_existe(this.Identificador, data_atual)).equals("paguemenos")){
             double desconto = 1.0;
             
-            for(int i = 0;i<=quantidade;i++){
+            for(int i = 0;i<quantidade;i++){
                 if(desconto > 0.5){
                     desconto-=0.05;
                 }

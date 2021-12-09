@@ -42,7 +42,7 @@ public class MFINAL_POO {
 
         boolean erro = false;
         while(opcao_1!=0){
-            System.out.print("\n----------MENU----------\n"); //
+            System.out.print("\n----------MENU----------\n"); 
             System.out.print("      1 - Login        \n");
             System.out.print("      0 - Sair        \n\n");
 
@@ -50,11 +50,11 @@ public class MFINAL_POO {
 
             System.out.print("O que deseja fazer??: ");
 
-            try{
+            try{ // vou tentar ler o input como int
                 opcao_1 = sc_opcao_1.nextInt();
                 erro= false;
             }
-            catch (InputMismatchException ex__){
+            catch (InputMismatchException ex__){ //se der erro entao vai voltar a apresentar o menu e pedir novamente um input
                 System.out.print("Tem que inserir um número!!\n");
                 erro= true;
             }
@@ -66,10 +66,10 @@ public class MFINAL_POO {
                 System.out.print("Qual o seu email: ");
                 String mail = sc_mail.nextLine();
                 
-                String tipo_cliente = list_clientes.cliente_existe(mail);
+                String tipo_cliente = list_clientes.cliente_existe(mail); //saber se o cliente existe e se existir qual o seu tipo
                 
 
-                while((!(mail.contains("@")))||tipo_cliente.equals("")){ 
+                while((!(mail.contains("@")))||tipo_cliente.equals("")){  //caso o mail nao exista ou o mail introduzido nao tiver "@" sera pedido ao utilizador um novo input
 
                     System.out.print("Email inválido.\n");
                     System.out.print("Qual o seu email: ");
@@ -77,7 +77,7 @@ public class MFINAL_POO {
                     tipo_cliente = list_clientes.cliente_existe(mail);
                 }
 
-                System.out.print("\n\n\t\t Bem vindo à sua conta "+ list_clientes.get_name_by_mail(mail));
+                System.out.print("\n\n\t\t Bem vindo à sua conta "+ list_clientes.get_name_by_mail(mail));//vamos buscar o nome do cliente
             
                 int opcao_cliente = 1;
                     while(opcao_cliente != 0){
@@ -90,7 +90,7 @@ public class MFINAL_POO {
 
                         System.out.print("O que deseja fazer??: ");
 
-                        try{
+                        try{ // vou tentar ler o input como int
                             opcao_cliente = sc_opcao_cliente.nextInt();
                             erro= false;
                         }
@@ -100,14 +100,14 @@ public class MFINAL_POO {
                         }
                         
 
-                        if (opcao_cliente == 1 && (!erro)){
+                        if (opcao_cliente == 1 && (!erro)){ //caso nao haja erro e seja escolhida a opcao 1
 
                             Cesto cesto_de_compras = new Cesto();
 
                             int continuar_compras =1;
                             while (continuar_compras == 1) {
                                 System.out.print("Produtos dísponiveis:\n\n");
-                                list_produtos.print_all();
+                                list_produtos.print_all(); //dar print a todos os produtos disponiveis
                                 
                                 int n_produto=0;
 
@@ -146,7 +146,7 @@ public class MFINAL_POO {
                                     }
                                 }
 
-                                Produto produto_selecionado = list_produtos.get(n_produto-1);
+                                Produto produto_selecionado = list_produtos.get(n_produto-1); //
 
                                 int quan_produto = 0;
 
@@ -230,7 +230,7 @@ public class MFINAL_POO {
                                 
                             }
                             if(continuar_compras ==0){
-                                if(cesto_de_compras.size()!=0){
+                                if(cesto_de_compras.size()!=0){ //se o cesto nao estiver vazio
                                     
                                     list_clientes.add_compras(mail, cesto_de_compras);
 
@@ -248,14 +248,14 @@ public class MFINAL_POO {
                                     
                                     System.out.print("\n\n\t\t TOTAL : "+conta);
                                 }
-                                else{
+                                else{ //se o cesto estiver vazio
                                     System.out.print("\n\tO seu cesto estava vazio!!");
                                 }
                                 
                             }
                             
                         }
-                        else if (opcao_cliente == 2 && (!erro)){
+                        else if (opcao_cliente == 2 && (!erro)){ //se o cliente escrever um input valido vao ser apresentadas as compras efetuadas
                             
                             list_clientes.print_all_clientes(mail);
                         }
